@@ -1,27 +1,32 @@
---- 
-leadingZeroPossible: "true"
-internationalPrefix: "00"
-generalDesc: 
-  nationalNumberPattern: "\n          [2-8]\\d{6}|\n          0\\d{10}\n        "
+---
+countryCode: '501'
+internationalPrefix: '00'
+leadingZeroPossible: 'true'
+availableFormats:
+  numberFormat:
+  - pattern: (\d{3})(\d{4})
+    leadingDigits: ! '[2-8]'
+    format: $1-$2
+  - pattern: (0)(800)(\d{4})(\d{3})
+    leadingDigits: '0'
+    format: $1-$2-$3-$4
+generalDesc:
+  nationalNumberPattern: ! "\n          [2-8]\\d{6}|\n          0\\d{10}\n        "
   possibleNumberPattern: \d{7}(?:\d{4})?
-countryCode: "501"
-mobile: 
-  nationalNumberPattern: "\n          6(?:\n            [0-2]\\d|\n            [67][01]\n          )\\d{4}\n        "
+fixedLine:
+  nationalNumberPattern: ! '[234578][02]\d{5}'
   possibleNumberPattern: \d{7}
-  exampleNumber: "6221234"
-tollFree: 
+  exampleNumber: '2221234'
+mobile:
+  nationalNumberPattern: 6[0-367]\d{5}
+  possibleNumberPattern: \d{7}
+  exampleNumber: '6221234'
+tollFree:
   nationalNumberPattern: 0800\d{7}
   possibleNumberPattern: \d{11}
-  exampleNumber: 08001234123
-fixedLine: 
-  nationalNumberPattern: "[234578][02]\\d{5}"
-  possibleNumberPattern: \d{7}
-  exampleNumber: "2221234"
-availableFormats: 
-  numberFormat: 
-  - format: $1-$2
-    leadingDigits: "[2-8]"
-    pattern: (\d{3})(\d{4})
-  - format: $1-$2-$3-$4
-    leadingDigits: "0"
-    pattern: (0)(800)(\d{4})(\d{3})
+  exampleNumber: '08001234123'
+emergency:
+  nationalNumberPattern: ! "\n          9(?:\n            0|\n            11\n          )\n
+    \         "
+  possibleNumberPattern: \d{2,3}
+  exampleNumber: '911'

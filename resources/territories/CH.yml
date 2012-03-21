@@ -1,34 +1,54 @@
---- 
-personalNumber: 
-  nationalNumberPattern: 878\d{6}
-  exampleNumber: "878123456"
-premiumRate: 
-  nationalNumberPattern: 90[016]\d{6}
-  exampleNumber: "900123456"
-nationalPrefix: "0"
-internationalPrefix: "00"
-generalDesc: 
-  nationalNumberPattern: "[2-9]\\d{8}"
-  possibleNumberPattern: \d{9}
-countryCode: "41"
-mobile: 
-  nationalNumberPattern: 7[46-9]\d{7}
-  exampleNumber: "741234567"
+---
+countryCode: '41'
+internationalPrefix: '00'
+nationalPrefix: '0'
 nationalPrefixFormattingRule: $NP$FG
-sharedCost: 
-  nationalNumberPattern: 84[0248]\d{6}
-  exampleNumber: "840123456"
-tollFree: 
+availableFormats:
+  numberFormat:
+  - pattern: ([2-9]\d)(\d{3})(\d{2})(\d{2})
+    leadingDigits: ! "\n            [2-7]|\n            [89]1\n          "
+    format: $1 $2 $3 $4
+  - pattern: ([89]\d{2})(\d{3})(\d{3})
+    leadingDigits: ! "\n            8[047]|\n            90\n          "
+    format: $1 $2 $3
+  - pattern: (\d{3})(\d{2})(\d{3})(\d{2})(\d{2})
+    leadingDigits: '860'
+    format: $1 $2 $3 $4 $5
+generalDesc:
+  nationalNumberPattern: ! "\n          [2-9]\\d{8}|\n          860\\d{9}\n        "
+  possibleNumberPattern: \d{9}(?:\d{3})?
+fixedLine:
+  nationalNumberPattern: ! "\n          (?:\n            2[12467]|\n            3[1-4]|\n
+    \           4[134]|\n            5[12568]|\n            6[12]|\n            [7-9]1\n
+    \         )\\d{7}\n        "
+  possibleNumberPattern: \d{9}
+  exampleNumber: '212345678'
+mobile:
+  nationalNumberPattern: 7[46-9]\d{7}
+  possibleNumberPattern: \d{9}
+  exampleNumber: '741234567'
+tollFree:
   nationalNumberPattern: 800\d{6}
-  exampleNumber: "800123456"
-fixedLine: 
-  nationalNumberPattern: "\n          (?:\n            2[12467]|\n            3[1-4]|\n            4[134]|\n            5[12568]|\n            6[12]|\n            [7-9]1\n          )\\d{7}\n        "
-  exampleNumber: "212345678"
-availableFormats: 
-  numberFormat: 
-  - format: $1 $2 $3 $4
-    leadingDigits: "\n            [2-7]|\n            [89]1\n          "
-    pattern: ([2-9]\d)(\d{3})(\d{2})(\d{2})
-  - format: $1 $2 $3
-    leadingDigits: "\n            8[047]|\n            90\n          "
-    pattern: ([89]\d{2})(\d{3})(\d{3})
+  possibleNumberPattern: \d{9}
+  exampleNumber: '800123456'
+premiumRate:
+  nationalNumberPattern: 90[016]\d{6}
+  possibleNumberPattern: \d{9}
+  exampleNumber: '900123456'
+sharedCost:
+  nationalNumberPattern: 84[0248]\d{6}
+  possibleNumberPattern: \d{9}
+  exampleNumber: '840123456'
+personalNumber:
+  nationalNumberPattern: 878\d{6}
+  possibleNumberPattern: \d{9}
+  exampleNumber: '878123456'
+voicemail:
+  nationalNumberPattern: 860\d{9}
+  possibleNumberPattern: \d{12}
+  exampleNumber: '860123456789'
+emergency:
+  nationalNumberPattern: ! "\n          1(?:\n            1[278]|\n            44\n
+    \         )\n        "
+  possibleNumberPattern: \d{3}
+  exampleNumber: '112'

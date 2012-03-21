@@ -1,13 +1,18 @@
---- 
-internationalPrefix: "00"
-generalDesc: 
-  nationalNumberPattern: "[2-46]\\d{3}"
+---
+countryCode: '247'
+internationalPrefix: '00'
+generalDesc:
+  nationalNumberPattern: ! '[2-467]\d{3}'
   possibleNumberPattern: \d{4}
-countryCode: "247"
-mobile: 
+fixedLine:
+  nationalNumberPattern: ! "\n          (?:\n            3[0-5]|\n            4[4-6]|\n
+    \           [26]\\d|\n            70\n          )\\d{2}\n        "
+  possibleNumberPattern: \d{4}
+  exampleNumber: '6889'
+mobile:
   nationalNumberPattern: NA
   possibleNumberPattern: NA
-fixedLine: 
-  nationalNumberPattern: "\n          (?:\n            3[0-5]|\n            4[4-6]|\n            [26]\\d\n          )\\d{2}\n        "
-  possibleNumberPattern: \d{4}
-  exampleNumber: "6889"
+emergency:
+  nationalNumberPattern: '911'
+  possibleNumberPattern: \d{3}
+  exampleNumber: '911'

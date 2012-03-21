@@ -1,0 +1,20 @@
+---
+countryCode: '599'
+internationalPrefix: '00'
+generalDesc:
+  nationalNumberPattern: ! '[347]\d{6}'
+  possibleNumberPattern: \d{7}
+fixedLine:
+  nationalNumberPattern: ! "\n          (?:\n            318[023]|\n            416[0239]|\n
+    \           7(?:\n              1[578]|\n              50\n            )\\d\n
+    \         )\\d{3}\n        "
+  exampleNumber: '7151234'
+mobile:
+  nationalNumberPattern: ! "\n          (?:\n            318[1456]|\n            416[15-8]|\n
+    \           7(?:\n              0[01]|\n              [89]\\d\n            )\\d\n
+    \         )\\d{3}|\n        "
+  exampleNumber: '3181234'
+emergency:
+  nationalNumberPattern: ! "\n          112|\n          911\n        "
+  possibleNumberPattern: \d{3}
+  exampleNumber: '112'

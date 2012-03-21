@@ -1,35 +1,45 @@
---- 
-premiumRate: 
-  nationalNumberPattern: 9[01]\d{6}
-  possibleNumberPattern: \d{8}
-  exampleNumber: "90123456"
-nationalPrefix: "06"
-internationalPrefix: "00"
-generalDesc: 
-  nationalNumberPattern: \d{8,9}
-  possibleNumberPattern: \d{6,9}
-countryCode: "36"
-mobile: 
-  nationalNumberPattern: "\n          (?:\n            [27]0|\n            3[01]\n          )\\d{7}\n        "
-  possibleNumberPattern: \d{9}
-  exampleNumber: "201234567"
+---
+countryCode: '36'
+internationalPrefix: '00'
+nationalPrefix: '06'
 nationalPrefixFormattingRule: ($FG)
-sharedCost: 
-  nationalNumberPattern: 40\d{6}
-  possibleNumberPattern: \d{8}
-  exampleNumber: "40123456"
-tollFree: 
+availableFormats:
+  numberFormat:
+  - pattern: (1)(\d{3})(\d{4})
+    leadingDigits: '1'
+    format: $1 $2 $3
+  - pattern: (\d{2})(\d{3})(\d{3,4})
+    leadingDigits: ! '[2-9]'
+    format: $1 $2 $3
+generalDesc:
+  nationalNumberPattern: ! '[1-9]\d{7,8}'
+  possibleNumberPattern: \d{6,9}
+fixedLine:
+  nationalNumberPattern: ! "\n          (?:\n            1\\d|\n            2(?:\n
+    \             1\\d|\n              [2-9]\n            )|\n            3[2-7]|\n
+    \           4[24-9]|\n            5[2-79]|\n            6[23689]|\n            7(?:\n
+    \             1\\d|\n              [2-9]\n            )|\n            8[2-57-9]|\n
+    \           9[2-69]\n          )\\d{6}\n        "
+  exampleNumber: '12345678'
+mobile:
+  nationalNumberPattern: ! "\n          (?:\n            [27]0|\n            3[01]\n
+    \         )\\d{7}\n        "
+  possibleNumberPattern: \d{9}
+  exampleNumber: '201234567'
+tollFree:
   nationalNumberPattern: 80\d{6}
   possibleNumberPattern: \d{8}
-  exampleNumber: "80123456"
-fixedLine: 
-  nationalNumberPattern: "\n          (?:\n            1\\d|\n            2(?:\n              1\\d|\n              [2-9]\n            )|\n            3[2-7]|\n            4[24-9]|\n            5[2-79]|\n            6[23689]|\n            7(?:\n              1\\d|\n              [2-9]\n            )|\n            8[2-57-9]|\n            9[2-69]\n          )\\d{6}\n        "
-  exampleNumber: "12345678"
-availableFormats: 
-  numberFormat: 
-  - format: $1 $2 $3
-    leadingDigits: "1"
-    pattern: (1)(\d{3})(\d{4})
-  - format: $1 $2 $3
-    leadingDigits: "[2-9]"
-    pattern: (\d{2})(\d{3})(\d{3,4})
+  exampleNumber: '80123456'
+premiumRate:
+  nationalNumberPattern: 9[01]\d{6}
+  possibleNumberPattern: \d{8}
+  exampleNumber: '90123456'
+sharedCost:
+  nationalNumberPattern: 40\d{6}
+  possibleNumberPattern: \d{8}
+  exampleNumber: '40123456'
+emergency:
+  nationalNumberPattern: ! "\n          1(?:\n            0[457]|\n            12\n
+    \         )\n        "
+  possibleNumberPattern: \d{3}
+  exampleNumber: '112'

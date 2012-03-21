@@ -1,18 +1,22 @@
---- 
-nationalPrefix: "0"
-internationalPrefix: "00"
-generalDesc: 
-  nationalNumberPattern: "[45]\\d{5}"
-  possibleNumberPattern: \d{6}
-countryCode: "508"
-mobile: 
-  nationalNumberPattern: "55\\d{4} "
-  exampleNumber: "551234"
+---
+countryCode: '508'
+internationalPrefix: '00'
+nationalPrefix: '0'
 nationalPrefixFormattingRule: $NP$FG
-fixedLine: 
-  nationalNumberPattern: "41\\d{4} "
-  exampleNumber: "411234"
-availableFormats: 
-  numberFormat: 
-    format: $1 $2 $3
+availableFormats:
+  numberFormat:
     pattern: ([45]\d)(\d{2})(\d{2})
+    format: $1 $2 $3
+generalDesc:
+  nationalNumberPattern: ! '[45]\d{5}'
+  possibleNumberPattern: \d{6}
+fixedLine:
+  nationalNumberPattern: ! '41\d{4} '
+  exampleNumber: '411234'
+mobile:
+  nationalNumberPattern: ! '55\d{4} '
+  exampleNumber: '551234'
+emergency:
+  nationalNumberPattern: 1[578]
+  possibleNumberPattern: \d{2}
+  exampleNumber: '17'

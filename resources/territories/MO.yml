@@ -1,16 +1,21 @@
---- 
-internationalPrefix: "00"
-generalDesc: 
-  nationalNumberPattern: "[268]\\d{7}"
-  possibleNumberPattern: \d{8}
-countryCode: "853"
-mobile: 
-  nationalNumberPattern: 6[26]\d{6}
-  exampleNumber: "66123456"
-fixedLine: 
-  nationalNumberPattern: "\n          (?:\n            28[2-57-9]|\n            8[2-57-9]\\d\n          )\\d{5}\n        "
-  exampleNumber: "28212345"
-availableFormats: 
-  numberFormat: 
-    format: $1 $2
+---
+countryCode: '853'
+internationalPrefix: '00'
+availableFormats:
+  numberFormat:
     pattern: ([268]\d{3})(\d{4})
+    format: $1 $2
+generalDesc:
+  nationalNumberPattern: ! '[268]\d{7}'
+  possibleNumberPattern: \d{8}
+fixedLine:
+  nationalNumberPattern: ! "\n          (?:\n            28[2-57-9]|\n            8[2-57-9]\\d\n
+    \         )\\d{5}\n        "
+  exampleNumber: '28212345'
+mobile:
+  nationalNumberPattern: 6[236]\d{6}
+  exampleNumber: '66123456'
+emergency:
+  nationalNumberPattern: '999'
+  possibleNumberPattern: \d{3}
+  exampleNumber: '999'

@@ -1,41 +1,80 @@
---- 
-voip: 
-  nationalNumberPattern: 85\d{7}
+---
+countryCode: '31'
+internationalPrefix: '00'
+nationalPrefix: '0'
+nationalPrefixFormattingRule: $NP$FG
+availableFormats:
+  numberFormat:
+  - pattern: ([1-578]\d)(\d{3})(\d{4})
+    leadingDigits: ! "\n            1[035]|\n            2[0346]|\n            3[03568]|\n
+      \           4[0356]|\n            5[0358]|\n            7|\n            8[458]\n
+      \         "
+    format: $1 $2 $3
+  - pattern: ([1-5]\d{2})(\d{3})(\d{3})
+    leadingDigits: ! "\n            1[16-8]|\n            2[259]|\n            3[124]|\n
+      \           4[17-9]|\n            5[124679]\n          "
+    format: $1 $2 $3
+  - pattern: (6)(\d{8})
+    leadingDigits: 6[0-57-9]
+    format: $1 $2
+  - pattern: (66)(\d{7})
+    leadingDigits: '66'
+    format: $1 $2
+  - pattern: (14)(\d{3,4})
+    nationalPrefixFormattingRule: $FG
+    leadingDigits: '14'
+    format: $1 $2
+  - pattern: ([89]0\d)(\d{4,7})
+    leadingDigits: ! "\n            80|\n            9\n          "
+    format: $1 $2
+generalDesc:
+  nationalNumberPattern: ! "\n          1\\d{4,8}|\n          [2-7]\\d{8}|\n          [89]\\d{6,9}\n
+    \       "
+  possibleNumberPattern: \d{5,10}
+noInternationalDialling:
+  nationalNumberPattern: 14\d{3,4}
+  possibleNumberPattern: \d{5,6}
+fixedLine:
+  nationalNumberPattern: ! "\n          (?:\n            1[0135-8]|\n            2[02-69]|\n
+    \           3[0-68]|\n            4[0135-9]|\n            [57]\\d|\n            8[478]\n
+    \         )\\d{7}\n        "
   possibleNumberPattern: \d{9}
-premiumRate: 
-  nationalNumberPattern: 90[069]\d{4,7}
-  possibleNumberPattern: \d{7,10}
-  exampleNumber: "9001234"
-nationalPrefix: "0"
-internationalPrefix: "00"
-generalDesc: 
-  nationalNumberPattern: "[1-9]\\d{6,9}"
-  possibleNumberPattern: \d{7,10}
-countryCode: "31"
-mobile: 
+  exampleNumber: '101234567'
+mobile:
   nationalNumberPattern: 6[1-58]\d{7}
   possibleNumberPattern: \d{9}
-  exampleNumber: "612345678"
-nationalPrefixFormattingRule: $NP$FG
-tollFree: 
+  exampleNumber: '612345678'
+pager:
+  nationalNumberPattern: 66\d{7}
+  possibleNumberPattern: \d{9}
+  exampleNumber: '662345678'
+tollFree:
   nationalNumberPattern: 800\d{4,7}
   possibleNumberPattern: \d{7,10}
-  exampleNumber: "8001234"
-fixedLine: 
-  nationalNumberPattern: "\n          (?:\n            1[0135-8]|\n            2[02-69]|\n            3[0-68]|\n            4[0135-9]|\n            [57]\\d|\n            8[478]\n          )\\d{7}\n        "
+  exampleNumber: '8001234'
+premiumRate:
+  nationalNumberPattern: 90[069]\d{4,7}
+  possibleNumberPattern: \d{7,10}
+  exampleNumber: '9001234'
+voip:
+  nationalNumberPattern: 85\d{7}
   possibleNumberPattern: \d{9}
-  exampleNumber: "101234567"
-availableFormats: 
-  numberFormat: 
-  - format: $1 $2 $3
-    leadingDigits: "\n            1[035]|\n            2[0346]|\n            3[03568]|\n            4[0356]|\n            5[0358]|\n            7|\n            8[458]\n          "
-    pattern: ([1-578]\d)(\d{3})(\d{4})
-  - format: $1 $2 $3
-    leadingDigits: "\n            1[16-8]|\n            2[259]|\n            3[124]|\n            4[17-9]|\n            5[124679]\n          "
-    pattern: ([1-5]\d{2})(\d{3})(\d{3})
-  - format: $1 $2
-    leadingDigits: "6"
-    pattern: (6)(\d{8})
-  - format: $1 $2
-    leadingDigits: "\n            80|\n            9\n          "
-    pattern: ([89]0\d)(\d{4,7})
+  exampleNumber: '851234567'
+uan:
+  nationalNumberPattern: ! "\n          140(?:\n            1(?:\n              [035]|\n
+    \             [16-8]\\d\n            )|\n            2(?:\n              [0346]|\n
+    \             [259]\\d\n            )|\n            3(?:\n              [03568]|\n
+    \             [124]\\d\n            )|\n            4(?:\n              [0356]|\n
+    \             [17-9]\\d\n            )|\n            5(?:\n              [0358]|\n
+    \             [124679]\\d\n            )|\n            7\\d|\n            8[458]\n
+    \         )\n        "
+  possibleNumberPattern: \d{5,6}
+  exampleNumber: '14020'
+shortCode:
+  nationalNumberPattern: 18\d{2}
+  possibleNumberPattern: \d{4}
+  exampleNumber: '1833'
+emergency:
+  nationalNumberPattern: ! "\n          112|\n          911\n        "
+  possibleNumberPattern: \d{3}
+  exampleNumber: '112'

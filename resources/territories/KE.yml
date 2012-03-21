@@ -1,32 +1,50 @@
---- 
-premiumRate: 
-  nationalNumberPattern: "\n           9(?:\n             00|\n             1\n           )\\d{6,7}\n         "
-  possibleNumberPattern: \d{8,10}
-  exampleNumber: "900123456"
-nationalPrefix: "0"
-internationalPrefix: "000"
-generalDesc: 
-  nationalNumberPattern: \d{6,10}
-  possibleNumberPattern: \d{4,10}
-countryCode: "254"
-mobile: 
-  nationalNumberPattern: "\n          7(?:\n            0[0-3]|\n            [123]\\d|\n            5[0-3]|\n            7[0-4]\n          )\\d{6}\n        "
-  possibleNumberPattern: \d{9}
-  exampleNumber: "712123456"
+---
+countryCode: '254'
+internationalPrefix: '000'
+nationalPrefix: '0'
 nationalPrefixFormattingRule: $NP$FG
-tollFree: 
-  nationalNumberPattern: "\n          8(?:\n            00|\n            88\n          )\\d{6,7}\n        "
+availableFormats:
+  numberFormat:
+  - pattern: (\d{2})(\d{4,7})
+    leadingDigits: ! '[24-6]'
+    format: $1 $2
+  - pattern: (\d{3})(\d{6,7})
+    leadingDigits: '7'
+    format: $1 $2
+  - pattern: (\d{3})(\d{3})(\d{3,4})
+    leadingDigits: ! '[89]'
+    format: $1 $2 $3
+generalDesc:
+  nationalNumberPattern: ! "\n          20\\d{6,7}|\n          [4-9]\\d{6,9}\n        "
+  possibleNumberPattern: \d{5,10}
+fixedLine:
+  nationalNumberPattern: ! "\n          20\\d{6,7}|\n          4(?:\n            [013]\\d{7}|\n
+    \           [24-6]\\d{5,7}\n          )|\n          5(?:\n            [0-36-8]\\d{5,7}|\n
+    \           [459]\\d{5}\n          )|\n          6(?:\n            [08]\\d{5}|\n
+    \           [14-79]\\d{5,7}|\n            2\\d{7}\n          )\n        "
+  possibleNumberPattern: \d{5,9}
+  exampleNumber: '202012345'
+mobile:
+  nationalNumberPattern: ! "\n          7(?:\n            0[0-8]|\n            [123]\\d|\n
+    \           5[0-5]|\n            7[0-5]|\n            8[5-9]\n          )\\d{6}\n
+    \       "
+  possibleNumberPattern: \d{9}
+  exampleNumber: '712123456'
+tollFree:
+  nationalNumberPattern: 800[24-8]\d{5,6}
   possibleNumberPattern: \d{9,10}
-  exampleNumber: "800123456"
-fixedLine: 
-  nationalNumberPattern: "\n          (?:\n            20|\n            4[0-6]|\n            5\\d|\n            6[0-24-9]\n          )\\d{4,7}\n        "
-  possibleNumberPattern: \d{4,9}
-  exampleNumber: "202012345"
-availableFormats: 
-  numberFormat: 
-  - format: $1 $2
-    leadingDigits: "\n            [2-6]|\n            91\n          "
-    pattern: (\d{2})(\d{4,7})
-  - format: $1 $2
-    leadingDigits: "\n            [78]|\n            90\n          "
-    pattern: (\d{3})(\d{6,7})
+  exampleNumber: '800223456'
+premiumRate:
+  nationalNumberPattern: 900[02-578]\d{5}
+  possibleNumberPattern: \d{9}
+  exampleNumber: '900223456'
+shortCode:
+  nationalNumberPattern: ! "\n          1(?:\n            0[09]|\n            1(?:\n
+    \             [06]|\n              9[0-2579]\n            )|\n            2[13]|\n
+    \           3[01]\n          )\n        "
+  possibleNumberPattern: \d{3,4}
+  exampleNumber: '116'
+emergency:
+  nationalNumberPattern: ! "\n          112|\n          999\n        "
+  possibleNumberPattern: \d{3}
+  exampleNumber: '999'

@@ -1,14 +1,18 @@
---- 
-internationalPrefix: "00"
-generalDesc: 
-  nationalNumberPattern: "[29]\\d{4,5}"
+---
+countryCode: '688'
+internationalPrefix: '00'
+generalDesc:
+  nationalNumberPattern: ! '[29]\d{4,5}'
   possibleNumberPattern: \d{5,6}
-countryCode: "688"
-mobile: 
-  nationalNumberPattern: 90\d{4}
-  possibleNumberPattern: \d{6}
-  exampleNumber: "901234"
-fixedLine: 
+fixedLine:
   nationalNumberPattern: 2[02-9]\d{3}
   possibleNumberPattern: \d{5}
-  exampleNumber: "20123"
+  exampleNumber: '20123'
+mobile:
+  nationalNumberPattern: 90\d{4}
+  possibleNumberPattern: \d{6}
+  exampleNumber: '901234'
+emergency:
+  nationalNumberPattern: '911'
+  possibleNumberPattern: \d{3}
+  exampleNumber: '911'

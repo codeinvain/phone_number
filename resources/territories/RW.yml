@@ -1,36 +1,40 @@
---- 
-leadingZeroPossible: "true"
-premiumRate: 
-  nationalNumberPattern: 900\d{6}
-  possibleNumberPattern: \d{9}
-  exampleNumber: "900123456"
-nationalPrefix: "0"
-internationalPrefix: "00"
-generalDesc: 
-  nationalNumberPattern: "[027-9]\\d{7,8}"
+---
+countryCode: '250'
+internationalPrefix: '00'
+nationalPrefix: '0'
+leadingZeroPossible: 'true'
+availableFormats:
+  numberFormat:
+  - nationalPrefixFormattingRule: $FG
+    pattern: (2\d{2})(\d{3})(\d{3})
+    leadingDigits: '2'
+    format: $1 $2 $3
+  - pattern: ([7-9]\d{2})(\d{3})(\d{3})
+    nationalPrefixFormattingRule: $NP$FG
+    leadingDigits: ! '[7-9]'
+    format: $1 $2 $3
+  - pattern: (0\d)(\d{2})(\d{2})(\d{2})
+    leadingDigits: '0'
+    format: $1 $2 $3 $4
+generalDesc:
+  nationalNumberPattern: ! '[027-9]\d{7,8}'
   possibleNumberPattern: \d{8,9}
-countryCode: "250"
-mobile: 
+fixedLine:
+  nationalNumberPattern: ! "\n          2[258]\\d{7}|\n          06\\d{6}\n        "
+  exampleNumber: '250123456'
+mobile:
   nationalNumberPattern: 7[258]\d{7}
   possibleNumberPattern: \d{9}
-  exampleNumber: "720123456"
-tollFree: 
+  exampleNumber: '720123456'
+tollFree:
   nationalNumberPattern: 800\d{6}
   possibleNumberPattern: \d{9}
-  exampleNumber: "800123456"
-fixedLine: 
-  nationalNumberPattern: "\n          2[258]\\d{7}|\n          06\\d{6}\n        "
-  exampleNumber: "250123456"
-availableFormats: 
-  numberFormat: 
-  - format: $1 $2 $3
-    leadingDigits: "2"
-    pattern: (2\d{2})(\d{3})(\d{3})
-    nationalPrefixFormattingRule: $FG
-  - format: $1 $2 $3
-    leadingDigits: "[7-9]"
-    pattern: ([7-9]\d{2})(\d{3})(\d{3})
-    nationalPrefixFormattingRule: $NP$FG
-  - format: $1 $2 $3 $4
-    leadingDigits: "0"
-    pattern: (0\d)(\d{2})(\d{2})(\d{2})
+  exampleNumber: '800123456'
+premiumRate:
+  nationalNumberPattern: 900\d{6}
+  possibleNumberPattern: \d{9}
+  exampleNumber: '900123456'
+emergency:
+  nationalNumberPattern: '112'
+  possibleNumberPattern: \d{3}
+  exampleNumber: '112'

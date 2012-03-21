@@ -1,40 +1,56 @@
---- 
-nationalPrefixForParsing: (1900)
-shortCode: 
-  nationalNumberPattern: "\n          1(?:\n            02[2-4679]|\n            1(?:\n              1[0-35-9]|\n              2|\n              37|\n              46|\n              75|\n              8[79]|\n              9[0-379]\n            )|\n            212|\n            400|\n            902\n          )|\n          911\n        "
-  possibleNumberPattern: \d{3,4}
-  exampleNumber: "1022"
-voip: 
-  nationalNumberPattern: 40[02]0\d{4}
-  possibleNumberPattern: \d{8}
-  exampleNumber: "40001234"
-premiumRate: 
-  nationalNumberPattern: 90[059]\d{7}
-  possibleNumberPattern: \d{10}
-  exampleNumber: "9001234567"
-internationalPrefix: "00"
-generalDesc: 
-  nationalNumberPattern: "[2489]\\d{7,9}"
-  possibleNumberPattern: \d{8,10}
-countryCode: "506"
-mobile: 
-  nationalNumberPattern: 8[36789]\d{6}
-  possibleNumberPattern: \d{8}
-  exampleNumber: "83123456"
+---
+countryCode: '506'
+internationalPrefix: '00'
+nationalPrefixForParsing: (19(?:0[0-2468]|19|66|77))
 carrierCodeFormattingRule: $CC $FG
-tollFree: 
-  nationalNumberPattern: 800\d{7}
-  possibleNumberPattern: \d{10}
-  exampleNumber: "8001234567"
-fixedLine: 
+availableFormats:
+  numberFormat:
+  - pattern: (\d{4})(\d{4})
+    leadingDigits: ! "\n            [24-7]|\n            8[3-9]\n          "
+    format: $1 $2
+  - pattern: (\d{3})(\d{3})(\d{4})
+    leadingDigits: ! '[89]0'
+    format: $1-$2-$3
+generalDesc:
+  nationalNumberPattern: ! '[24-9]\d{7,9}'
+  possibleNumberPattern: \d{8,10}
+fixedLine:
   nationalNumberPattern: 2[24-7]\d{6}
   possibleNumberPattern: \d{8}
-  exampleNumber: "22123456"
-availableFormats: 
-  numberFormat: 
-  - format: $1 $2
-    leadingDigits: "\n            [24]|\n            8[3-9]\n          "
-    pattern: (\d{4})(\d{4})
-  - format: $1-$2-$3
-    leadingDigits: "[89]0"
-    pattern: (\d{3})(\d{3})(\d{4})
+  exampleNumber: '22123456'
+mobile:
+  nationalNumberPattern: ! "\n          5(?:\n            0[0-4]|\n            7[01]\n
+    \         )\\d{5}|\n          [67][01]\\d{6}|\n          8[36-9]\\d{6}\n        "
+  possibleNumberPattern: \d{8}
+  exampleNumber: '83123456'
+tollFree:
+  nationalNumberPattern: 800\d{7}
+  possibleNumberPattern: \d{10}
+  exampleNumber: '8001234567'
+premiumRate:
+  nationalNumberPattern: 90[059]\d{7}
+  possibleNumberPattern: \d{10}
+  exampleNumber: '9001234567'
+voip:
+  nationalNumberPattern: ! "\n          210[0-6]\\d{4}|\n          40(?:\n            [04]0\\d{4}|\n
+    \           10[0-3]\\d{3}|\n            2(?:\n              00\\d|\n              900\n
+    \           )\\d{2}|\n            3[01]\\d{4}|\n            5\\d{5}|\n            70[01]\\d{3}\n
+    \         )|\n          5100\\d{4}\n        "
+  possibleNumberPattern: \d{8}
+  exampleNumber: '40001234'
+shortCode:
+  nationalNumberPattern: ! "\n          1(?:\n            0(?:\n              00|\n
+    \             15|\n              2[2-4679]\n            )|\n            1(?:\n
+    \             1[0-35-9]|\n              37|\n              [46]6|\n              75|\n
+    \             8[79]|\n              9[0-379]\n            )|\n            2(?:\n
+    \             00|\n              [12]2|\n              34|\n              55\n
+    \           )|\n            333|\n            400|\n            5(?:\n              15|\n
+    \             5[15]|\n            )\n            693|\n            7(?:\n              00|\n
+    \             1[789]|\n              2[02]|\n              [67]7\n            )\n
+    \         )\n        "
+  possibleNumberPattern: \d{4}
+  exampleNumber: '1022'
+emergency:
+  nationalNumberPattern: ! "\n          112|\n          911\n        "
+  possibleNumberPattern: \d{3}
+  exampleNumber: '911'

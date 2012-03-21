@@ -1,34 +1,61 @@
---- 
+---
+countryCode: '375'
+preferredInternationalPrefix: 8~10
+internationalPrefix: '810'
 nationalPrefixForParsing: 80?
-premiumRate: 
-  nationalNumberPattern: 902\d{7}
-  possibleNumberPattern: \d{10}
-  exampleNumber: "9021234567"
-nationalPrefix: "8"
-internationalPrefix: 8~10
-generalDesc: 
-  nationalNumberPattern: "\n          [12-4]\\d{8}|\n          [89]\\d{9}\n        "
-  possibleNumberPattern: \d{7,10}
-countryCode: "375"
-mobile: 
-  nationalNumberPattern: "\n          (?:\n            2(?:\n              5[679]|\n              9[1-9]\n            )|\n            33\\d|\n            44\\d\n          )\\d{6}\n        "
-  possibleNumberPattern: \d{9}
-  exampleNumber: "294911911"
-tollFree: 
-  nationalNumberPattern: 80[13]\d{7}
-  possibleNumberPattern: \d{10}
-  exampleNumber: "8011234567"
-fixedLine: 
-  nationalNumberPattern: "\n          (?:\n            1(?:\n              5(?:\n                1[1-5]|\n                2\\d|\n                6[1-4]|\n                9[1-7]\n              )|\n              6(?:\n                [235]\\d|\n                4[1-7]\n              )|\n              7\\d{2}\n            )|\n            2(?:\n              1(?:\n                [246]\\d|\n                3[0-35-9]|\n                5[1-9]\n              )|\n              2(?:\n                [235]\\d|\n                4[0-8]\n              )|\n              3(?:\n                2\\d|\n                3[02-79]|\n                4[024-7]|\n                5[0-7]\n              )\n            )\n          )\\d{5}\n        "
-  possibleNumberPattern: \d{7,9}
-  exampleNumber: "152450911"
-availableFormats: 
-  numberFormat: 
-  - format: $1 $2 $3
-    leadingDigits: "[1-4]"
+nationalPrefix: '8'
+availableFormats:
+  numberFormat:
+  - nationalPrefixFormattingRule: $NP 0$FG
     pattern: ([1-4]\d)(\d{3})(\d{4})
-    nationalPrefixFormattingRule: $NP 0$FG
-  - format: $1 $2 $3
-    leadingDigits: "[89]"
+    leadingDigits: ! '[1-4]'
+    format: $1 $2 $3
+  - nationalPrefixFormattingRule: $NP $FG
     pattern: ([89]\d{2})(\d{3})(\d{4})
-    nationalPrefixFormattingRule: $NP $FG
+    leadingDigits: ! "\n            8[01]|\n            9\n          "
+    format: $1 $2 $3
+  - nationalPrefixFormattingRule: $NP $FG
+    pattern: (8\d{2})(\d{4})(\d{4})
+    leadingDigits: '82'
+    format: $1 $2 $3
+generalDesc:
+  nationalNumberPattern: ! "\n          [1-4]\\d{8}|\n          [89]\\d{9,10}\n        "
+  possibleNumberPattern: \d{7,11}
+noInternationalDialling:
+  nationalNumberPattern: ! "\n          8(?:\n            [01]|\n            20\n
+    \         )\\d{8}|\n          902\\d{7}\n        "
+  possibleNumberPattern: \d{10,11}
+  exampleNumber: '82012345678'
+fixedLine:
+  nationalNumberPattern: ! "\n          (?:\n            1(?:\n              5(?:\n
+    \               1[1-5]|\n                2\\d|\n                6[1-4]|\n                9[1-7]\n
+    \             )|\n              6(?:\n                [235]\\d|\n                4[1-7]\n
+    \             )|\n              7\\d{2}\n            )|\n            2(?:\n              1(?:\n
+    \               [246]\\d|\n                3[0-35-9]|\n                5[1-9]\n
+    \             )|\n              2(?:\n                [235]\\d|\n                4[0-8]\n
+    \             )|\n              3(?:\n                2\\d|\n                3[02-79]|\n
+    \               4[024-7]|\n                5[0-7]\n              )\n            )\n
+    \         )\\d{5}\n        "
+  possibleNumberPattern: \d{7,9}
+  exampleNumber: '152450911'
+mobile:
+  nationalNumberPattern: ! "\n          (?:\n            2(?:\n              5[5679]|\n
+    \             9[1-9]\n            )|\n            33\\d|\n            44\\d\n
+    \         )\\d{6}\n        "
+  possibleNumberPattern: \d{9}
+  exampleNumber: '294911911'
+tollFree:
+  nationalNumberPattern: ! "\n          8(?:\n            0[13]|\n            20\\d\n
+    \         )\\d{7}\n        "
+  possibleNumberPattern: \d{10,11}
+  exampleNumber: '8011234567'
+premiumRate:
+  nationalNumberPattern: ! "\n          (?:\n            810|\n            902\n          )\\d{7}\n
+    \       "
+  possibleNumberPattern: \d{10}
+  exampleNumber: '9021234567'
+emergency:
+  nationalNumberPattern: ! "\n          1(?:\n            0[123]|\n            12\n
+    \         )\n        "
+  possibleNumberPattern: \d{3}
+  exampleNumber: '112'

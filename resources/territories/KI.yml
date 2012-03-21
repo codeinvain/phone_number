@@ -1,22 +1,24 @@
---- 
-shortCode: 
-  nationalNumberPattern: "\n          10(?:\n            [0-8]|\n            5[01259]\n          )|\n          99[234]\n        "
-  possibleNumberPattern: \d{3,4}
-  exampleNumber: "992"
-nationalPrefix: "0"
-internationalPrefix: "00"
-generalDesc: 
-  nationalNumberPattern: "[2-689]\\d{4}"
+---
+countryCode: '686'
+internationalPrefix: '00'
+nationalPrefixForParsing: '0'
+generalDesc:
+  nationalNumberPattern: ! '[2-689]\d{4}'
   possibleNumberPattern: \d{5}
-countryCode: "686"
-mobile: 
-  nationalNumberPattern: "[69]\\d{4}"
-  exampleNumber: "61234"
-nationalPrefixFormattingRule: $NP$FG
-fixedLine: 
-  nationalNumberPattern: "\n          (?:\n            [234]\\d|\n            50|\n            8[1-5]\n          )\\d{3}\n        "
-  exampleNumber: "31234"
-availableFormats: 
-  numberFormat: 
-    format: $1
-    pattern: (\d{5})
+fixedLine:
+  nationalNumberPattern: ! "\n          (?:\n            [234]\\d|\n            50|\n
+    \           8[1-5]\n          )\\d{3}\n        "
+  exampleNumber: '31234'
+mobile:
+  nationalNumberPattern: ! "\n          6\\d{4}|\n          9(?:\n            [0-8]\\d|\n
+    \           9[015-8]\n          )\\d{2}\n        "
+  exampleNumber: '61234'
+shortCode:
+  nationalNumberPattern: ! "\n          10(?:\n            [0-8]|\n            5[01259]\n
+    \         )\n        "
+  possibleNumberPattern: \d{3,4}
+  exampleNumber: '100'
+emergency:
+  nationalNumberPattern: 99[2349]
+  possibleNumberPattern: \d{3}
+  exampleNumber: '999'

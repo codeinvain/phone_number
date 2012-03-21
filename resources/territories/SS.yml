@@ -1,0 +1,22 @@
+---
+countryCode: '211'
+internationalPrefix: '00'
+nationalPrefix: '0'
+availableFormats:
+  numberFormat:
+    pattern: (\d{3})(\d{3})(\d{3})
+    nationalPrefixFormattingRule: $NP$FG
+    format: $1 $2 $3
+generalDesc:
+  nationalNumberPattern: ! '[1489]\d{8}'
+  possibleNumberPattern: \d{9}
+fixedLine:
+  nationalNumberPattern: ! "\n          (?:\n            1[67]\\d|\n            811\n
+    \         )\\d{6}\n        "
+  exampleNumber: '811123456'
+mobile:
+  nationalNumberPattern: ! "\n          (?:\n            1(?:\n              02|\n
+    \             2[1269]\n            )|\n            477|\n            9(?:\n              0[03689]|\n
+    \             1\\d|\n              2[024-9]|\n              5[5-79]|\n              77|\n
+    \             98\n            )\n          )\\d{6}\n        "
+  exampleNumber: '977123456'

@@ -1,0 +1,35 @@
+---
+countryCode: '1'
+leadingDigits: '721'
+nationalPrefix: '1'
+internationalPrefix: '011'
+generalDesc:
+  nationalNumberPattern: ! '[5789]\d{9}'
+  possibleNumberPattern: \d{7}(?:\d{3})?
+fixedLine:
+  nationalNumberPattern: ! "\n          7215(?:\n            4[2-8]|\n            8[239]\n
+    \         )\\d{4}\n        "
+  exampleNumber: '7215425678'
+mobile:
+  nationalNumberPattern: ! "\n          7215(?:\n            1[02]|\n            2\\d|\n
+    \           5[03469]|\n            8[01678]\n          )\\d{4}\n        "
+  possibleNumberPattern: \d{10}
+  exampleNumber: '7215205678'
+tollFree:
+  nationalNumberPattern: ! "\n          8(?:\n            00|\n            55|\n            66|\n
+    \           77|\n            88\n          )[2-9]\\d{6}\n        "
+  possibleNumberPattern: \d{10}
+  exampleNumber: '8002123456'
+premiumRate:
+  nationalNumberPattern: 900[2-9]\d{6}
+  possibleNumberPattern: \d{10}
+  exampleNumber: '9002123456'
+personalNumber:
+  nationalNumberPattern: ! "\n          5(?:\n            00|\n            33|\n            44\n
+    \         )[2-9]\\d{6}\n        "
+  possibleNumberPattern: \d{10}
+  exampleNumber: '5002345678'
+emergency:
+  nationalNumberPattern: '919'
+  possibleNumberPattern: \d{3}
+  exampleNumber: '919'
