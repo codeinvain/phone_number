@@ -1,17 +1,15 @@
-source :rubygems
+source 'https://rubygems.org'
+gem 'xml-simple'
 
 group :development, :test do
-  gem 'xml-simple'
 
   gem 'test-unit'
   gem 'guard-test'
 
   gem 'bundler'
   gem 'jeweler'
-end
-
-require 'rbconfig'
-if RbConfig::CONFIG['host_os'] =~ /darwin/i
-  gem 'rb-fsevent'
-  gem 'growl'
+  group :darwin do
+    gem 'rb-fsevent'
+    gem 'growl'
+  end
 end
