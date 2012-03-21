@@ -2,12 +2,10 @@ source :rubygems
 
 group :development, :test do
   gem 'xml-simple'
-  
+
   gem 'test-unit'
   gem 'guard-test'
-  
-  gem 'rcov'
-  
+
   gem 'bundler'
   gem 'jeweler'
 end
