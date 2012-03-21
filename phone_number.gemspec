@@ -4,29 +4,31 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{phone_number}
+  s.name = "phone_number"
   s.version = "0.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Campbell"]
-  s.date = %q{2011-06-30}
-  s.description = %q{A Ruby port of Google's libphonenumber}
-  s.email = %q{jcampbell@movitas.com}
+  s.date = "2012-03-21"
+  s.description = "A Ruby port of Google's libphonenumber"
+  s.email = "jcampbell@movitas.com"
   s.extra_rdoc_files = [
     "LICENSE",
     "README.md"
   ]
   s.files = [
-    ".rvmrc",
     "Gemfile",
+    "Gemfile.lock",
     "Guardfile",
     "LICENSE",
     "README.md",
     "Rakefile",
     "VERSION",
+    "docs/dependencies.dot",
     "lib/phone_number.rb",
     "lib/phone_number/metadata.rb",
     "lib/phone_number/number.rb",
+    "lib/phone_number/number_util.rb",
     "phone_number.gemspec",
     "resources/PhoneNumberMetaData.xml",
     "resources/territories/.gitkeep",
@@ -272,15 +274,15 @@ Gem::Specification.new do |s|
     "resources/territories/ZW.yml",
     "tasks/phone_number.rake",
     "test/phone_number/metadata_test.rb",
-    "test/phone_number/number_test.rb",
+    "test/phone_number/number_util_test.rb",
     "test/phone_number_test.rb",
     "test/test_helper.rb"
   ]
-  s.homepage = %q{http://github.com/Movitas/phone_number}
+  s.homepage = "http://github.com/Movitas/phone_number"
   s.licenses = ["Apache"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
-  s.summary = %q{A Ruby port of Google's libphonenumber}
+  s.rubygems_version = "1.8.11"
+  s.summary = "A Ruby port of Google's libphonenumber"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
@@ -290,9 +292,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<growl>, [">= 0"])
       s.add_development_dependency(%q<xml-simple>, [">= 0"])
       s.add_development_dependency(%q<test-unit>, [">= 0"])
-      s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<guard-test>, [">= 0"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
@@ -300,9 +300,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<growl>, [">= 0"])
       s.add_dependency(%q<xml-simple>, [">= 0"])
       s.add_dependency(%q<test-unit>, [">= 0"])
-      s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<guard-test>, [">= 0"])
-      s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
     end
@@ -311,9 +309,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<growl>, [">= 0"])
     s.add_dependency(%q<xml-simple>, [">= 0"])
     s.add_dependency(%q<test-unit>, [">= 0"])
-    s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<guard-test>, [">= 0"])
-    s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
   end
